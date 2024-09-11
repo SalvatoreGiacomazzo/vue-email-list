@@ -14,15 +14,11 @@
     <!--Vue-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <div id="app">
-        <div>{{mail}}</div>
+        <!--list of emails-->
+        <ul v-for="mail in mails" key="mail">
 
-
-
-
-
-
-
-
+            {{mail}}
+        </ul>
     </div>
     <!--Axios-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"
