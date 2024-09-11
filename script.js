@@ -1,14 +1,30 @@
-/*const { createApp } = Vue
+const { createApp } = Vue
 
 createApp({
     data() {
+        return {
+            mail: this.mail,
+            apiUrl: "https://flynn.boolean.careers/exercises/api/random/mail",
+
+        }
     },
+    methods: {
+        getEmail() {
+            axios.get(this.apiUrl)
+                .then((response) => {
+                    console.log(response)
+                    this.mail = response.data.response;
+                    console.log(this.mail)
+                });
+        }
+    }, mounted() {
+        this.getEmail()
+
+    }
+
+
+
 }).mount('#app');
-*/
-//Importazione variabile Axios da una CDN
-//Uso il metodo Get
-//Al momento della risposta esegui la funzione all'interno
-axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
-    .then(function (response) {
-        console.log(response)
-    })
+
+
+
